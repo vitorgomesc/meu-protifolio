@@ -1,0 +1,92 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #0c1b21, #19272c, #2c5364);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+}
+.code-box {
+  background: rgba(14, 17, 17, 0.05);
+  border: 1px solid #040707;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-top: 2rem;
+  text-align: left;
+  box-shadow: 0 0 20px rgba(11, 15, 16, 0.2);
+  font-family: 'Courier New', monospace;
+  overflow-x: auto;
+  color: #050d0e;
+}
+
+/* Estilo para os ícones dentro do gráfico radar */
+.chart-icon {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+
+/* Estilo geral para o canvas */
+canvas {
+  max-width: 100%;
+  margin: 2rem auto;
+  display: block;
+}
+
+.code-box code {
+  white-space: pre-wrap;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.container {
+  padding: 2rem;
+  max-width: 600px;
+}
+
+.profile-pic {
+  width: 140px;
+  height: 150px;
+  border-radius: 50%;
+  border: 1px solid #0eb7c3;
+  object-fit: cover;
+  box-shadow: 0 0 20px #00f0ff;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: 0.5rem 0;
+  color: #00e0ff;
+}
+
+p {
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 1.5rem;
+}
+
+.social {
+  margin-top: 1rem;
+}
+
+.social a img {
+  width: 32px;
+  margin: 0 10px;
+  filter: brightness(1.2);
+  transition: transform 0.3s ease;
+}
+
+.social a img:hover {
+  transform: scale(1.2);
+  filter: brightness(2);
+}
+
+.slogan {
+  margin-top: 2rem;
+  font-style: italic;
+  color: #00f0ff;
+}
