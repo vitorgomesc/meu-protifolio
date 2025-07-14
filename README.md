@@ -11,7 +11,7 @@
 
 <p align="center">
   <a href="https://github.com/vitorgomesc"><img src="https://img.shields.io/badge/GitHub-Perfil-181717?style=for-the-badge&logo=github&logoColor=white"></a>
-  <a href="https://linkedin.com/in/SEU_USUARIO"><img src="https://img.shields.io/badge/LinkedIn-Perfil-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"></a>
+  <a href="https://www.linkedin.com/in/vitor-hugo-gomes-carvalho-711111262/"><img src="https://img.shields.io/badge/LinkedIn-Perfil-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"></a>
   <a href="https://vitorgomesc.github.io/meu-protifolio/"><img src="https://img.shields.io/badge/Ver%20site-Online-00f0ff?style=for-the-badge&logo=firefox-browser&logoColor=white"></a>
 </p>
 
