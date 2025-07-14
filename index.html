@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <style>
-  canvas {
-    max-width: 100%;
-  }
-
-  .chart-icon {
-    width: 24px;
-    height: 24px;
-  }
-</style>
-
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
   <title>Vitor | Desenvolvedor Front-End</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+ 
+  <style>
+    canvas {
+      max-width: 100%;
+    }
+
+    .chart-icon {
+      width: 24px;
+      height: 24px;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -24,23 +24,26 @@
     <h1>Olá, eu sou o Vitor 👋</h1>
     <p>Desenvolvedor Front-End em evolução para Fullstack</p>
 
-    <canvas id="skillsChart" width="300" height="300"></canvas>
+    <!-- BLOCO COM TEXTO E GRÁFICO LADO A LADO -->
+    <div class="content-section">
+      <div class="text-column">
+        <h2>💼 Sobre Mim</h2>
+        <p id="typed-text"></p>
+      </div>
 
+      
+
+    <!-- REDES SOCIAIS -->
     <div class="social">
       <a href="https://github.com/vitorgomesc" target="_blank"><img src="icons/github.svg" alt="GitHub"></a>
       <a href="https://linkedin.com/in/SEU_USUARIO" target="_blank"><img src="icons/linkedin.svg" alt="LinkedIn"></a>
       <a href="https://instagram.com/SEU_USUARIO" target="_blank"><img src="icons/instagram.svg" alt="Instagram"></a>
     </div>
-<div class="code-box">
-  <pre><code class="language-html">
-&lt;div class="caixa"&gt;
-  &lt;h1&gt;Olá, mundo!&lt;/h1&gt;
-&lt;/div&gt;
-  </code></pre>
-</div>
 
     <p class="slogan">Codificando o futuro com paixão 💙</p>
   </div>
+
+ 
 
   <script src="script.js"></script>
 </body>

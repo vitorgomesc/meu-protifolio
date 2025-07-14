@@ -1,104 +1,74 @@
-const ctx = document.getElementById('skillsChart').getContext('2d');
+// Texto com efeito de digitação
+const text = `Olá! Meu nome é Vitor Hugo, sou desenvolvedor web em formação e estou em constante evolução para me tornar um profissional full stack. Comecei com HTML, CSS e JavaScript, e atualmente estou expandindo meus conhecimentos em Node.js, Angular e Flutter.
 
-// Carregando imagens dos ícones
-const icons = {
-  HTML: new Image(),
-  CSS: new Image(),
-  JavaScript: new Image(),
-  'Node.js': new Image(),
-  Angular: new Image(),
-  Flutter: new Image(),
-};
+Tenho como objetivo criar aplicações completas e bem estruturadas, que unam design moderno, código limpo e uma ótima experiência para o usuário. Gosto de transformar ideias em projetos funcionais, buscando sempre aprender novas tecnologias e boas práticas de desenvolvimento.
 
-icons.HTML.src = '/icons/html.svg'; // Caminho atualizado
-icons.CSS.src = 'icons/css.svg';
-icons.JavaScript.src = 'icons/javascript.svg';
-icons['Node.js'].src = 'icons/nodejs.svg';
-icons.Angular.src = 'icons/angular.svg';
-icons.Flutter.src = 'icons/flutter.svg';
+Neste portfólio, compartilho os projetos que venho desenvolvendo como forma de estudo e prática profissional. Estou aberto a novas oportunidades, freelas ou parcerias, especialmente com pessoas e empresas que valorizam dedicação, evolução e inovação.`;
 
-const initialData = [90, 85, 80, 50, 40, 30];
+const textElement = document.getElementById("typed-text");
+let index = 0;
 
-const chart = new Chart(ctx, {
-  type: 'radar',
-  data: {
-    labels: ['HTML', 'CSS', 'JavaScript', 'Node.js', 'Angular', 'Flutter'],
-    datasets: [{
-      label: 'Habilidades',
-      data: [...initialData],
-      backgroundColor: 'rgba(0, 240, 255, 0.2)',
-      borderColor: '#00f0ff',
-      borderWidth: 2,
-      pointBackgroundColor: '#00f0ff'
-    }]
-  },
-  options: {
-    responsive: true,
-    animation: {
-      duration: 1000,
-      easing: 'easeInOutQuad'
+function typeText() {
+  if (index < text.length) {
+    textElement.innerHTML += text.charAt(index);
+    index++;
+    setTimeout(typeText, 50); // velocidade da digitação
+  }
+}
+
+window.addEventListener("load", () => {
+  typeText();
+
+  // Gráfico com Chart.js
+  const ctx = document.getElementById('skillsChart').getContext('2d');
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['HTML', 'CSS', 'JavaScript', 'Node.js', 'Angular', 'Flutter'],
+      datasets: [{
+        label: 'Nível de Conhecimento (%)',
+        data: [90, 85, 80, 70, 60, 50],
+        backgroundColor: [
+          '#f16529', // HTML
+          '#2965f1', // CSS
+          '#f7df1e', // JavaScript
+          '#8cc84b', // Node.js
+          '#dd1b16', // Angular
+          '#42a5f5'  // Flutter
+        ],
+        borderRadius: 8
+      }]
     },
-    scales: {
-      r: {
-        angleLines: {
-          color: '#444'
-        },
-        grid: {
-          color: '#444'
-        },
-        pointLabels: {
-          font: {
-            size: 0 // Oculta texto, só vai desenhar os ícones
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        y: {
+          beginAtZero: true,
+          max: 100,
+          ticks: {
+            color: '#ccc'
           },
-          callback: function (_, index) {
-            return ''; // Remove texto
+          grid: {
+            color: '#333'
           }
         },
-        ticks: {
-          display: false
+        x: {
+          ticks: {
+            color: '#ccc'
+          },
+          grid: {
+            color: '#333'
+          }
+        }
+      },
+      plugins: {
+        legend: {
+          labels: {
+            color: '#ccc'
+          }
         }
       }
-    },
-    plugins: {
-      legend: {
-        display: false
-      }
-    },
-    elements: {
-      line: {
-        borderWidth: 2
-      }
-    },
-    // Custom drawing of icons
-    plugins: [{
-
-      id: 'customLabels',
-      afterDraw(chart) {
-        const { ctx, chartArea, scales } = chart;
-        const labels = chart.data.labels;
-
-        labels.forEach((label, i) => {
-          const angle = (Math.PI / 3) * i - Math.PI / 2;
-          const r = scales.r.drawingArea + 20;
-          const x = scales.r.xCenter + r * Math.cos(angle) - 12;
-          const y = scales.r.yCenter + r * Math.sin(angle) - 12;
-
-          const icon = icons[label];
-          if (icon.complete) {
-            ctx.drawImage(icon, x, y, 24, 24);
-          }
-        });
-      }
-
-    }]
-  }
-});
-
-// Animação de variação contínua
-setInterval(() => {
-  chart.data.datasets[0].data = initialData.map(value => {
-    const variation = Math.floor(Math.random() * 6) - 3;
-    return Math.max(30, Math.min(95, value + variation));
+    }
   });
-  chart.update();
-}, 1500);
+});

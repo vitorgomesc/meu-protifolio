@@ -8,43 +8,13 @@ body {
   justify-content: center;
   min-height: 100vh;
   text-align: center;
-}
-.code-box {
-  background: rgba(14, 17, 17, 0.05);
-  border: 1px solid #040707;
-  border-radius: 8px;
-  padding: 1rem;
-  margin-top: 2rem;
-  text-align: left;
-  box-shadow: 0 0 20px rgba(11, 15, 16, 0.2);
-  font-family: 'Courier New', monospace;
-  overflow-x: auto;
-  color: #050d0e;
-}
-
-/* Estilo para os ícones dentro do gráfico radar */
-.chart-icon {
-  width: 24px;
-  height: 24px;
-  display: block;
-}
-
-/* Estilo geral para o canvas */
-canvas {
-  max-width: 100%;
-  margin: 2rem auto;
-  display: block;
-}
-
-.code-box code {
-  white-space: pre-wrap;
-  font-size: 0.95rem;
-  line-height: 1.5;
+  flex-direction: column;
 }
 
 .container {
   padding: 2rem;
-  max-width: 600px;
+  max-width: 1200px;
+  width: 100%;
 }
 
 .profile-pic {
@@ -89,4 +59,53 @@ p {
   margin-top: 2rem;
   font-style: italic;
   color: #00f0ff;
+}
+
+/* 🔷 NOVO: Layout lado a lado */
+.content-section {
+  display: flexbox;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.text-column {
+  flex: 1;
+  min-width: 300px;
+  font-family: 'Courier New', monospace;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #ddd;
+  text-align: left;
+  padding: 10px;
+}
+
+.chart-column {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+/* Canvas do gráfico */
+canvas {
+  max-width: 90%;
+  margin: 2rem auto;
+  display: block;
+}
+
+/* Animação de digitação */
+#typed-text::after {
+  content: '|';
+  animation: blink 0.7s infinite;
+  color: #4CAF50;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
