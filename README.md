@@ -1,7 +1,7 @@
 <h1 align="center">💻 Vitor | Portfólio Profissional</h1>
 
 <p align="center">
-  <img src="" width="120" alt="Foto do Vitor" style="border-radius: 50%;">
+  <img src="foto/perfil.jpeg" width="120" alt="Foto do Vitor" style="border-radius: 50%;">
 </p>
 
 <p align="center">
